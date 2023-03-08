@@ -40,6 +40,17 @@ class App extends Component {
             <div>
               <div className="the-date">
                 {new Date(item.dt * 1000).toLocaleString()}
+                <img
+                  className="icons"
+                  src={`http://openweathermap.org/img/wn/${item.weather[0].icon}.png`}
+                ></img>
+                <div className="the-temp">
+                  {Math.round(item.main.temp - 273.15)}&#8451;
+                </div>
+                <div className="the-desc">{item.weather[0].description}</div>
+                <div className="the-wind">
+                  wind: {Math.round(item.wind.speed)}mph
+                </div>
               </div>
             </div>
           );
